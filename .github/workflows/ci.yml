@@ -22,7 +22,7 @@ jobs:
         os:
           - macos-latest
           - ubuntu-latest
-          #- windows-latest
+          - windows-latest
         node-version:
           - 12.x
           - 14.x
@@ -37,11 +37,9 @@ jobs:
           - os: ubuntu-latest
             env: env
             versions: ''
-          # Running natively under Windows requires some further work on paths
-          # and file access patterns.
-          #- os: windows-latest
-          #  env: Get-ChildItem Env:\
-          #  versions: choco --version
+          - os: windows-latest
+            env: Get-ChildItem Env:\
+            versions: choco --version
 
     timeout-minutes: 20
 
